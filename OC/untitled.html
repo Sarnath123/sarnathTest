@@ -1,0 +1,29 @@
+
+<!doctype <!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<style type="text/css">div{width: 100px; height: 100px; background-color: blue;margin: 5px;}</style>
+<body>
+	<div id="drag-target" data-content="我是数据" draggable="true">拽我！</div>
+	<div id="drat-dest"></div>
+</body>
+
+<script type="text/javascript">
+	var drag-target = document.getElementById('drag-target'),//可拖放元素
+	drat-dest = document.getElementById('drat-dest');//可拖放元素
+	drag-target.addEnentListener('dragstart',function(e)){//监听开始拖拽
+		e.dataTransfer.setData('text/plain',e.target.getAttribute('data-content'));//使用文本存入属性值
+	}
+
+	drat-dest.addEnentListener('drop',function(e)){//监听放置事件
+		drat-dest.innerHTML = e.dataTransfer.getData('text/plain');//设置html为获取数据
+	}
+
+	drat-dest.addEnentListener('dragover',function(e)){
+		e.preventDefault();
+	}
+</script>
+
+
+</html>
