@@ -26,6 +26,9 @@
 	self.webView.scrollView.scrollEnabled = NO;
 	[self.webView loadRequest:request];
 	[self.view addSubview:self.webView];
+	/**
+	 你个傻子
+	 */
 }
 
 - (void)didReceiveMemoryWarning {
